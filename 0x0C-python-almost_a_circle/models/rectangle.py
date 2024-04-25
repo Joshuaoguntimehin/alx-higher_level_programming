@@ -32,7 +32,7 @@ class Rectangle(Base):
         return self.__height
 
     @height.setter
-    def set_height(self, value):
+    def height(self, value):
         if not isinstance(value, int):
             raise TypeError("height must be an integer")
         if value <= 0:
@@ -80,7 +80,8 @@ class Rectangle(Base):
         """
         Return the print() and str() representation of the Rectangle.
         """
-        return f"[Rectangle](self.id){self.x}/{self.y}-{self.width}/{self.height}"
+        return f"[Rectangle](self.id){self.x}/{self.y}\
+    -{self.width}/{self.height}"
 
     def display(self):
         """   Prints size of rectangle using #"""
@@ -104,6 +105,6 @@ class Rectangle(Base):
                 elif count == 3:
                     self.x = arg
                 elif count == 4:
-                    self.y = args
+                    self.y = arg
                 else:
                     break
