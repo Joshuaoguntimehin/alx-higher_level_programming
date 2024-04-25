@@ -75,7 +75,6 @@ class Rectangle(Base):
     def display(self):
         for _ in range(self.height):
             print("#" * self.width)
-    print(id)
 
     def __str__(self):
         """
