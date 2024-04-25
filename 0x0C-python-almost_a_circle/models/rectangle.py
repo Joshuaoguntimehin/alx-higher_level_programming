@@ -5,7 +5,7 @@ from models.base import Base
 
 class Rectangle(Base):
     """Class Doc."""
-    def __init__(self, width, height, x=0, y=0,id=None):
+    def __init__(self, width, height, x=0, y=0, id=None):
         super().__init__(id)
 
         self.__width = width
@@ -49,7 +49,7 @@ class Rectangle(Base):
         if not isinstance(value, int):
             raise TypeError("x must be an integer")
         elif value < 0:
-                raise ValueError("x must be >= 0")
+            raise ValueError("x must be >= 0")
         self.__x = value
 
     @property
@@ -62,9 +62,9 @@ class Rectangle(Base):
         if not isinstance(value, int):
             raise TypeError("y must be an integer")
         if value < 0:
-                raise ValueError("y must be >= 0")
+            raise ValueError("y must be >= 0")
         self.__y = value
-        
+
     def area(self):
         """
         Returna area of the rectangle
@@ -75,20 +75,21 @@ class Rectangle(Base):
     def display(self):
         for _ in range(self.height):
             print("#" * self.width)
-    print (id)
+    print(id)
 
     def __str__(self):
         """
         Return the print() and str() representation of the Rectangle.
         """
-        return f"[Rectangle] ({self.id}) {self.x}/{self.y} - {self.width}/{self.height}"
-   
+        return f"[Rectangle](self.id){self.x}/{self.y}-{self.width}/{self.height}"
+
     def display(self):
         """   Prints size of rectangle using #"""
-        for _  in range(self.y):
-                print("")
-        for _ in range (self.height):
-                print('' * self.x + '#' * self.width)
+        for _ in range(self.y):
+            print("")
+        for _ in range(self.height):
+            print('' * self.x + '#' * self.width)
+
     def update(self, *args, **kwargs):
         """
         Assign arguments to attributes based on their positions.
@@ -101,8 +102,8 @@ class Rectangle(Base):
                     self.width = arg
                 elif count == 2:
                     self.height = arg
-                elif count ==3:
-                    self.x=arg
+                elif count == 3:
+                    self.x = arg
                 elif count == 4:
                     self.y = args
                 else:
