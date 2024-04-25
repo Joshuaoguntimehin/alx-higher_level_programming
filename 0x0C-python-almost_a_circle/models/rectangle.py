@@ -35,7 +35,7 @@ class Rectangle(Base):
     def set_height(self, value):
         if not isinstance(value, int):
             raise TypeError("height must be an integer")
-        elif value <= 0:
+        if value <= 0:
             raise ValueError("height must be > 0")
         self.__height = value
 
@@ -61,6 +61,42 @@ class Rectangle(Base):
     def y(self, value):
         if not isinstance(value, int):
             raise TypeError("y must be an integer")
-        elif y < 0:
+        if value < 0:
                 raise ValueError("y must be >= 0")
         self.__y = value
+        
+
+    def area(self):
+        """Returna area of the rectangle"""
+        area = self.width * self.height
+        return area
+    def display(self):
+        for _ in range(self.height):
+            print("#" * self.width)
+    print (id)
+    def __str__(self):
+        return f"[Rectangle] ({self.id}) {self.x}/{self.y} - {self.width}/{self.height}"
+    def display(self):
+        """   Prints size of rectangle using #"""
+        for _  in range(self.y):
+                print("$")
+        for _ in range (self.height):
+                print('' * self.x + '#' * self.width)
+    def update(self, *args, **kwargs):
+        """
+        Assign arguments to attributes based on their positions.
+        """
+        if args:
+            for count, arg in enumerate(args):
+                if count == 0:
+                    self.id = arg
+                elif count == 1:
+                    self.width = arg
+                elif count == 2:
+                    self.height = arg
+                elif count ==3:
+                    self.x=arg
+                elif count == 4:
+                    self.y = args
+                else:
+                    break
