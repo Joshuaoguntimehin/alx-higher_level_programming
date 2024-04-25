@@ -1,3 +1,4 @@
+#!/usr/bin/python3
 """ importing from base.py """
 from models.base import Base
 
@@ -14,8 +15,6 @@ class Rectangle(Base):
         self.__height = height
         self.__x = x
         self.__y = y
-         
-        
 
     @property
     def width(self):
@@ -29,7 +28,6 @@ class Rectangle(Base):
         elif width <= 0:
             raise ValueError("width must be > 0")
         self.__width = width
-
 
     @property
     def height(self):
@@ -49,7 +47,6 @@ class Rectangle(Base):
         """ Getter and setter for height"""
         return self.__x
 
-
     @x.setter
     def x(self, value):
         if not isinstance(value, int):
@@ -63,12 +60,10 @@ class Rectangle(Base):
         """ Getter and setter for y"""
         return self.__y
 
-
     @y.setter
     def y(self, value):
         if not isinstance(value, int):
             raise TypeError("y must be an integer")
-
         elif y < 0:
                 raise ValueError("y must be >= 0")
         self.__y = value
