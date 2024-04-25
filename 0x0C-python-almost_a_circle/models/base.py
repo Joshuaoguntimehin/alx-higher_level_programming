@@ -1,13 +1,16 @@
 #!/usr/bin/python3
+"""
+Defines a base model class.
+"""
 class Base:
-    '''class doc'''
+    """
+    Represents the base model
+    """
     __nb_objects = 0
 
     def __init__(self, id=None):
-        """using if statement for id"""
         if id is not None:
             self.id = id
         else:
-            """for if id id none"""
             self.__class__.__nb_objects += 1
             self.id = self.__class__.__nb_objects
