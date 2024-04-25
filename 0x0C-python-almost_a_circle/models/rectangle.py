@@ -98,8 +98,8 @@ class Rectangle(Base):
         """
         Return the print() and str() representation of the Rectangle.
         """
-        return f"[Rectangle](self.id){self.x}/{self.y}\
-    -{self.width}/{self.height}"
+        return f"[Rectangle] ({self.id}) {self.x}/{self.y}\
+ - {self.width}/{self.height}"
 
     def display(self):
         """   Prints size of rectangle using #"""
