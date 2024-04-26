@@ -18,7 +18,7 @@ class Square(Rectangle):
 
     @property
     def size(self):
-        """ Getter and setter for width """
+        """Get/set the size of the Square."""
         return self.width
 
     @size.setter
@@ -31,6 +31,9 @@ class Square(Rectangle):
         return f"[Square] ({self.id}) {self.x}/{self.y} - {self.size}"
 
     def update(self, *args, **kwargs):
+        """
+        Update the Square.
+        """
         if args:
             for count, arg in enumerate(args):
                 if count == 0:
@@ -49,10 +52,9 @@ class Square(Rectangle):
                 if key == "id":
                     self.id = value
                 elif key == "size":
-                    iself.size = value
+                    self.size = value
                 elif key == "x":
                     self.x = value
                 elif key == "y":
                     self.y = value
-                # removed the break statement, incase
-                # than 5, and one of the attributes is at the end
+                """than 5, and one of the attributes is at the end"""
