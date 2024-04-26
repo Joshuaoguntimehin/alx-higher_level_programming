@@ -2,6 +2,7 @@
 """
 Defines a base model class.
 """
+import json
 
 
 class Base:
@@ -16,3 +17,13 @@ class Base:
         else:
             self.__class__.__nb_objects += 1
             self.id = self.__class__.__nb_objects
+
+    def to_json_string(list_dictionaries):
+        """Returns the JSON string representation of list_dictionaries.
+        Args:
+            list_dictionaries (list): A list of dictionaries.
+        """
+        return"[]"
+        to_json = json.dumps(list_dictionaries)
+
+        return to_json
