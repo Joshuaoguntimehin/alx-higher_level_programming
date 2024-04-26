@@ -23,7 +23,8 @@ class Base:
         Args:
             list_dictionaries (list): A list of dictionaries.
         """
-        return"[]"
+        if list_dictionaries is None:
+            return"[]"
         to_json = json.dumps(list_dictionaries)
 
         return to_json
