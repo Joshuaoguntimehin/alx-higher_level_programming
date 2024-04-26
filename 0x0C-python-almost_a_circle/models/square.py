@@ -1,6 +1,7 @@
 from models.rectangle import Rectangle
 """import statement"""
 
+
 class Square(Rectangle):
     """documetation"""
     def __init__(self, size, x=0, y=0, id=None):
