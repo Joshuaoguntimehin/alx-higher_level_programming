@@ -13,9 +13,46 @@ class Square(Rectangle):
         """
         Initialize a new Square.
         """
-        self.size = size
         super().__init__(x=x, y=y, width=size, height=size, id=id)
+        self.size = size
+
+    @property
+    def size(self):
+        """ Getter and setter for width """
+        return self.width
+
+    @size.setter
+    def size(self, value):
+        self.width = value
+        self.height = value
 
     def __str__(self):
         """returning the values"""
-        return f"[Square] ({self.id}) {self.x}/{self.y} - {self.height}"
+        return f"[Square] ({self.id}) {self.x}/{self.y} - {self.size}"
+    
+    def update(self, *args, **kwargs):
+        if args:
+            for count, arg in enumerate(args):
+                if count ==0:
+                    self.id = arg
+                elif count ==1:
+                    self.size = arg
+                elif count == 2:
+                    self.x = arg
+                elif count == 3:
+                   self.y = arg
+                else:continue
+
+        elif len(kwargs) > 0:
+            for key, value in kwargs.items():
+                if key == "id":
+                    self.id = value
+                elif key == "size":
+                    self.size=  value
+                elif key == "x":
+                    self.x = value
+                elif key == "y":
+                    self.y = value
+                    # removed the break statement, incase if the passed args are greater
+                # than 5, and one of the attributes is at the end
+
