@@ -58,3 +58,12 @@ class Square(Rectangle):
                 elif key == "y":
                     self.y = value
                 """than 5, and one of the attributes is at the end"""
+      
+    def to_dictionary(self):
+        """Returns the dictionary representation of the square."""
+        return {
+                'id': self.id,
+                'size': self.size,
+                'x': self.x,
+                'y': self.y
+                }
