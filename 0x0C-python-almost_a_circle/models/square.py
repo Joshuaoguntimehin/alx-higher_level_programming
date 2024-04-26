@@ -29,30 +29,30 @@ class Square(Rectangle):
     def __str__(self):
         """returning the values"""
         return f"[Square] ({self.id}) {self.x}/{self.y} - {self.size}"
-    
+
     def update(self, *args, **kwargs):
         if args:
             for count, arg in enumerate(args):
-                if count ==0:
+                if count == 0:
                     self.id = arg
-                elif count ==1:
+                elif count == 1:
                     self.size = arg
                 elif count == 2:
                     self.x = arg
                 elif count == 3:
-                   self.y = arg
-                else:continue
+                    self.y = arg
+                else:
+                    continue
 
         elif len(kwargs) > 0:
             for key, value in kwargs.items():
                 if key == "id":
                     self.id = value
                 elif key == "size":
-                    self.size=  value
+                    iself.size = value
                 elif key == "x":
                     self.x = value
                 elif key == "y":
                     self.y = value
-                    # removed the break statement, incase if the passed args are greater
+                # removed the break statement, incase
                 # than 5, and one of the attributes is at the end
-
