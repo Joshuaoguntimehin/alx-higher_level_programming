@@ -1,3 +1,3 @@
 def lookup(obj):
-    """return dir statement"""
+    """return dictionary"""
     return dir(obj)
