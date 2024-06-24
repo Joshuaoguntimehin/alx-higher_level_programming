@@ -13,7 +13,7 @@ if __name__ == "__main__":
 
     query_rows = cur.fetchall()
     for row in query_rows:
-        print(f"{(count)}{row}")
+        print(f"({count},'{row[0]}')")
         count += 1
     cur.close()
     db.close()
