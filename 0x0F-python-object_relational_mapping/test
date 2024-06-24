@@ -1,0 +1,11 @@
+import MySQLdb
+
+try:
+    conn = MySQLdb.connect(host='localhost',
+                           user='username',
+                           passwd='password',
+                           db='database_name')
+    print("Connected successfully!")
+    conn.close()
+except MySQLdb.Error as e:
+    print(f"Error connecting to MySQL: {e}")
