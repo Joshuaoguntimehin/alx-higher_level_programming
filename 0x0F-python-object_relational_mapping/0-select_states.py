@@ -26,8 +26,8 @@ def list_states(username, password, database_name):
         for state in states:
             print(state)
 
-            cursor.close()
-            db.close()
+        cursor.close()
+        db.close()
 
     except MySQLdb.Error as e:
         print(f"Error connecting to MySQL: {e}")
