@@ -1,7 +1,7 @@
 #!/usr/bin/python3
 import MySQLdb
 import sys
-***print in id ***
+'''print in id '''
 
 def list_states(username, password, database_name):
     # Connect to MySQL
@@ -10,16 +10,16 @@ def list_states(username, password, database_name):
                              passwd=password, db=database_name)
         cursor = db.cursor()
 
-        # Execute the query
+        '''Execute the query'''
         query = "SELECT * FROM states ORDER BY id ASC"
         cursor.execute(query)
 
-        # Fetch all the rows and print them
+        '''Fetch all the rows and print them'''
         states = cursor.fetchall()
         for state in states:
             print(state)
 
-        # Close cursor and connection
+        '''Close cursor and connection'''
         cursor.close()
         db.close()
 
