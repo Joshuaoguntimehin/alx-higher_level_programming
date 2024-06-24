@@ -1,7 +1,9 @@
 #!/usr/bin/python3
 import MySQLdb
 import sys
+"""command to import mysqldb
 
+"""
 def list_states(username, password, database_name):
     # Connect to MySQL
     """
