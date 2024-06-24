@@ -18,7 +18,6 @@ def list_states(username, password, database_name):
         db = MySQLdb.connect(host='localhost', port=3306, user=username,
                              passwd=password, db=database_name)
         cursor = db.cursor()
-
         '''Execute the query'''
         query = "SELECT * FROM states ORDER BY id ASC"
         cursor.execute(query)
@@ -28,7 +27,8 @@ def list_states(username, password, database_name):
         for state in states:
             print(state)
 
-        '''Close cursor and connection'''
+
+            '''Close cursor and connection'''
         cursor.close()
         db.close()
 
