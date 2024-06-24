@@ -2,33 +2,34 @@
 import MySQLdb
 import sys
  """
+This script connects to a MySQL database and lists all states from the
+'states' table, sorted by 'id' in ascending order.
+
+Usage:
+    python script.py <username> <password> <database_name>
+"""
+def list_states(username, password, database_name):
+    # Connect to MySQL
+    """
     Connects to a MySQL database and lists all states in ascending order by id.
 
     Args:
-    username (str): The MySQL username.
-    password (str): The MySQL password.
-    database_name (str): The name of the database to connect to.
-
-    Returns:
-    None
+        username (str): The MySQL username.
+        password (str): The MySQL password.
+        database_name (str): The name of the database to connect to.
     """
-def list_states(username, password, database_name):
-    # Connect to MySQL
     try:
         db = MySQLdb.connect(host='localhost', port=3306, user=username,
                              passwd=password, db=database_name)
         cursor = db.cursor()
-        '''Execute the query'''
         query = "SELECT * FROM states ORDER BY id ASC"
         cursor.execute(query)
 
-        '''Fetch all the rows and print them'''
         states = cursor.fetchall()
         for state in states:
             print(state)
 
 
-            '''Close cursor and connection'''
         cursor.close()
         db.close()
 
