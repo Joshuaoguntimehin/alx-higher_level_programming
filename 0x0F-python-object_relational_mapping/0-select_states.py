@@ -1,13 +1,7 @@
 #!/usr/bin/python3
 import MySQLdb
 import sys
- """
-This script connects to a MySQL database and lists all states from the
-'states' table, sorted by 'id' in ascending order.
 
-Usage:
-    python script.py <username> <password> <database_name>
-"""
 def list_states(username, password, database_name):
     # Connect to MySQL
     """
