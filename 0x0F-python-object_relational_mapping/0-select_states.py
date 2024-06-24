@@ -1,8 +1,17 @@
 #!/usr/bin/python3
 import MySQLdb
 import sys
-'''print in id '''
+ """
+    Connects to a MySQL database and lists all states in ascending order by id.
 
+    Args:
+    username (str): The MySQL username.
+    password (str): The MySQL password.
+    database_name (str): The name of the database to connect to.
+
+    Returns:
+    None
+    """
 def list_states(username, password, database_name):
     # Connect to MySQL
     try:
