@@ -1,9 +1,9 @@
 #!/usr/bin/python3
+"""import statement"""
 import MySQLdb
 import sys
 
-import MySQLdb
-import sys
+"""commmand for printing cities.id"""
 
 def list_cities(username, password, database):
     try:
