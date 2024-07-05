@@ -8,4 +8,4 @@ with urllib.request.urlopen(url) as response:
     if x_request_id:
         print(f"{x_request_id}")
     else:
-        print("X-Request-Id header not found in the response.")
+        exit(1)
