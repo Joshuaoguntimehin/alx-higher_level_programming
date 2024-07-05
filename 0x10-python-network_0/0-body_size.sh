@@ -1,4 +1,4 @@
-#!/usr/bin/env bash
+#!/bin/bash
 # Use curl to get the size of the response body in bytes
 if [ -z "$1" ]; then
     echo "USAGE: $0 <URL>"
