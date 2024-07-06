@@ -1,7 +1,8 @@
 #!/usr/bin/python3
+"""import statement """
 import requests
 import sys
-
+"""in a new world"""
 def get_commits(repo, owner):
     url = f"https://api.github.com/repos/{owner}/{repo}/commits"
     response = requests.get(url)
