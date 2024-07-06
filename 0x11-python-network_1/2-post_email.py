@@ -1,13 +1,13 @@
-import urllib.request
-mport urllib.parse
 import sys
-
-url=sys.argv[1]
-email=({'email':'sys.argv[2]'})
-data=urllib.parse.urlencode(email)
-data = data.encode('utf-8')
-req = url.request.Request(url, email)
-with urllib.request.Request(req) as response:
-    html = response.,read().decode('utf-8')
-    print(html)    
-send_past_request(url, email)
+import urllib.parse
+import urllib.request
+def send_post_request(url, email):
+    data = urllib.parse.urlencode({'email': email}).encode() 
+    request = urllib.request.Request(url, data=data) 
+    with urllib.request.urlopen(request) as response: 
+        response_body = response.read().decode('utf-8') 
+        # Print the response body 
+        print(response_body) 
+        if __name__ == "__main__"
+        url = sys.argv[1]
+        email = sys.args[2]
