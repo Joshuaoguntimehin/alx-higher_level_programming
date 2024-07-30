@@ -1,12 +1,16 @@
 #!/usr/bin/node
-"""const argument """
-const args = process.argv.slice(2);
+
+// Import the required module
 const fs = require('fs');
 
-const filePath = process.argv[2];
+// Retrieve command-line arguments, excluding the first two (node and script path)
+const args = process.argv.slice(2);
 
-// Read the file using utf-8 encoding
-fs.readFile(filePath, 'utf-8', (err, data) => {
+// Get the file path from the arguments
+const filePath = args[0];
+
+// Read the file using UTF-8 encoding
+fs.readFile(filePath, 'utf8', (err, data) => {
     if (err) {
         // Print the error object if an error occurs
         console.error(err);
