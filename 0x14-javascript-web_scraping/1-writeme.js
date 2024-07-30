@@ -1,24 +1,21 @@
 #!/usr/bin/node
-// import the file system module
+
+// Import the required module
 const fs = require('fs');
 
-// Check if the correct number of arguments is provided
-if (process.argv.length < 4) {
-  console.error('Usage: node writeFile.js <file-path> <data-to-write>');
-  process.exit(1);
-}
+// Retrieve command-line arguments, excluding the first two (node and script path)
+const args = process.argv.slice(2);
 
-// Get the file path and data from command-line arguments
-const filePath = process.argv[2];
-const data = process.argv[3];
+// Get the file path from the arguments
+const filePath = args[0];
 
-// Write the data to the file asynchronously
-fs.writeFile(filePath, data, 'utf8', (err) => {
-  if (err) {
-    // Handle the error if there is one
-    console.error('Error writing to the file:', err.message);
-    return;
-  }
-  // Confirm that the file was written successfully
-  console.log(data);
+// Read the file using UTF-8 encoding
+fs.readFile(filePath, 'utf8', (err, data) => {
+    if (err) {
+        // Print the error object if an error occurs
+        console.error(err);
+    } else {
+        // Print the file content
+        console.log(data);
+    }
 });
