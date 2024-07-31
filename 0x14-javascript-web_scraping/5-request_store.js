@@ -1,10 +1,5 @@
 #!/usr/bin/node
 // Check if the correct number of arguments is provided
-if (process.argv.length < 4) {
-  console.error('Usage: node writeFile.js <url> <file-path>');
-  process.exit(1);
-}
-
 const fs = require('fs');
 const request = require('request');
 
